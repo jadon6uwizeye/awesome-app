@@ -35,49 +35,64 @@ class Page2 extends StatelessWidget {
       color: Colors.blueGrey,
       child: Card(
         // ignore: avoid_unnecessary_containers
-        child: Container(
-          color: Colors.blueGrey,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Image.asset('assets/cartoon.png', fit: BoxFit.contain),
-              FloatingActionButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: const Icon(Icons.arrow_back),
-              ),
-              Expanded(
-                  child: Container(
-                color: Colors.indigo,
-                padding: const EdgeInsets.all(20),
-                // ignore: avoid_unnecessary_containers
-                child: Container(
-                  color: Colors.red,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    // ignore: prefer_const_literals_to_create_immutables
-                    children: <Widget>[
-                      const Text('This is a card',
-                          style: TextStyle(
-                              fontSize: 20, backgroundColor: Colors.white)),
-                      const Text(
-                        'This is a card',
-                        style: TextStyle(
-                            fontSize: 20, backgroundColor: Colors.green),
+        child: ListView(
+          children: [
+            FloatingActionButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Icon(Icons.navigate_before),
+            ),
+            FloatingActionButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Page3()));
+              },
+              child: const Icon(Icons.navigate_next_sharp),
+            ),
+            Container(
+              color: Colors.blueGrey,
+              child: Center(
+                child: Wrap(
+                  // mainAxisSize: MainAxisSize.min,
+                  // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Image.asset('assets/cartoon.png', fit: BoxFit.contain),
+                    Expanded(
+                        child: Container(
+                      color: Colors.indigo,
+                      padding: const EdgeInsets.all(20),
+                      // ignore: avoid_unnecessary_containers
+                      child: Container(
+                        color: Colors.red,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          // ignore: prefer_const_literals_to_create_immutables
+                          children: <Widget>[
+                            const Text('This is a card',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    backgroundColor: Colors.white)),
+                            const Text(
+                              'This is a card',
+                              style: TextStyle(
+                                  fontSize: 20, backgroundColor: Colors.green),
+                            ),
+                            const Text(
+                              'This is a card',
+                              style: TextStyle(
+                                  fontSize: 20, backgroundColor: Colors.blue),
+                            ),
+                          ],
+                        ),
                       ),
-                      const Text(
-                        'This is a card',
-                        style: TextStyle(
-                            fontSize: 20, backgroundColor: Colors.blue),
-                      ),
-                    ],
-                  ),
+                    )),
+                  ],
                 ),
-              )),
-            ],
-          ),
+              ),
+            ),
+          ],
         ),
       ),
     );
@@ -109,5 +124,36 @@ class MyHomePage extends StatelessWidget {
           child: const Icon(Icons.navigate_next),
         ),
         body: Center(child: Image.asset('assets/Roads-Untraveled.jpg')));
+  }
+}
+
+class Page3 extends StatelessWidget {
+  const Page3({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: const Icon(Icons.navigate_before),
+        ),
+        appBar: AppBar(
+          title: const Text('Page 3'),
+        ),
+        body: Container(
+            color: Colors.blueGrey,
+            child: Scaffold(
+              floatingActionButton: FloatingActionButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: const Icon(Icons.navigate_next),
+              ),
+              body: Center(
+                child: Image.asset('assets/cartoon.png', fit: BoxFit.contain),
+              ),
+            )));
   }
 }
