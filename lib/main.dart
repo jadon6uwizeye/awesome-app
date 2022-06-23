@@ -16,25 +16,69 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Awesome App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.blueGrey,
       ),
-      home: const MyHomePage(title: 'Awesome app'),
-      // next: const NextPage(),
+      home: const MyHomePage(title: 'Awesome app'), // next: const Page2(),
     );
   }
 }
 
-class NextPage extends StatelessWidget {
-  const NextPage({Key? key}) : super(key: key);
+class Page2 extends StatelessWidget {
+  const Page2({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Next Page'),
-      ),
-      body: const Center(
-        child: Text('Next Page'),
+    return Container(
+      padding: const EdgeInsets.all(8),
+      height: double.infinity,
+      width: double.infinity,
+      color: Colors.blueGrey,
+      child: Card(
+        // ignore: avoid_unnecessary_containers
+        child: Container(
+          color: Colors.blueGrey,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              Image.asset('assets/cartoon.png', fit: BoxFit.contain),
+              FloatingActionButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: const Icon(Icons.arrow_back),
+              ),
+              Expanded(
+                  child: Container(
+                color: Colors.indigo,
+                padding: const EdgeInsets.all(20),
+                // ignore: avoid_unnecessary_containers
+                child: Container(
+                  color: Colors.red,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    // ignore: prefer_const_literals_to_create_immutables
+                    children: <Widget>[
+                      const Text('This is a card',
+                          style: TextStyle(
+                              fontSize: 20, backgroundColor: Colors.white)),
+                      const Text(
+                        'This is a card',
+                        style: TextStyle(
+                            fontSize: 20, backgroundColor: Colors.green),
+                      ),
+                      const Text(
+                        'This is a card',
+                        style: TextStyle(
+                            fontSize: 20, backgroundColor: Colors.blue),
+                      ),
+                    ],
+                  ),
+                ),
+              )),
+            ],
+          ),
+        ),
       ),
     );
   }
@@ -54,6 +98,15 @@ class MyHomePage extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 color: Color.fromARGB(255, 17, 18, 23)),
           ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Page2()),
+            );
+          },
+          child: const Icon(Icons.navigate_next),
         ),
         body: Center(child: Image.asset('assets/Roads-Untraveled.jpg')));
   }
