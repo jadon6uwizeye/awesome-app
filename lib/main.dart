@@ -133,27 +133,95 @@ class Page3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: const Text('Page 3'),
+        ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             Navigator.pop(context);
           },
           child: const Icon(Icons.navigate_before),
         ),
-        appBar: AppBar(
-          title: const Text('Page 3'),
+        body: ListView(
+            // ignore: prefer_const_literals_to_create_immutables
+            children: <Widget>[
+              const ProductBox(
+                  name: "name",
+                  description: "description",
+                  age: "23",
+                  image: 'assets/cartoon.png'),
+              const ProductBox(
+                  name: "name",
+                  description: "description",
+                  age: "20",
+                  image: 'assets/cartoon.png'),
+              const ProductBox(
+                  name: "name",
+                  description: "description",
+                  age: "19",
+                  image: 'assets/cartoon.png'),
+            ]));
+  }
+}
+
+class ProductBox extends StatelessWidget {
+  const ProductBox(
+      {Key? key,
+      required this.name,
+      required this.description,
+      required this.age,
+      required this.image})
+      : super(key: key);
+
+  final String name;
+  final String description;
+  final String age;
+  final String image;
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Expanded(
+          child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Image.asset(image, fit: BoxFit.contain),
+                Container(
+                  color: Colors.indigo,
+                  padding: const EdgeInsets.all(10),
+                  child: Flexible(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        Text(
+                          "Name : $name",
+                          style: const TextStyle(
+                              fontSize: 30, fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          description,
+                          style: const TextStyle(fontSize: 20),
+                        ),
+                        Text(age),
+                      ],
+                    ),
+                  ),
+                ),
+                // Expanded(
+                //     child: Column(
+                //         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                //         crossAxisAlignment: CrossAxisAlignment.start,
+                //         // ignore: prefer_const_literals_to_create_immutables
+                //         children: <Widget>[
+                //       Text(name,
+                //           style: const TextStyle(
+                //               fontSize: 20, backgroundColor: Colors.white)),
+                //     ]))
+              ]),
         ),
-        body: Container(
-            color: Colors.blueGrey,
-            child: Scaffold(
-              floatingActionButton: FloatingActionButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: const Icon(Icons.navigate_next),
-              ),
-              body: Center(
-                child: Image.asset('assets/cartoon.png', fit: BoxFit.contain),
-              ),
-            )));
+      ),
+    );
   }
 }
