@@ -2,6 +2,7 @@ import 'package:awesome/advanced/cofee_tiles.dart';
 import 'package:flutter/material.dart';
 
 import 'cofee_types.dart';
+import 'login_page.dart';
 
 class CoffePage1 extends StatefulWidget {
   const CoffePage1({Key? key}) : super(key: key);
@@ -60,25 +61,33 @@ class _CoffePage1State extends State<CoffePage1> {
           bottomNavigationBar: BottomNavigationBar(
             backgroundColor: Colors.transparent,
             elevation: 0,
-            items: const [
-              BottomNavigationBarItem(
+            items: [
+              const BottomNavigationBarItem(
                 icon: Icon(Icons.home, color: Colors.white),
                 label: "Home",
               ),
-              BottomNavigationBarItem(
+              const BottomNavigationBarItem(
                 icon: Icon(Icons.search,
                     color: Color.fromARGB(255, 154, 138, 138)),
                 label: "search",
               ),
-              BottomNavigationBarItem(
+              const BottomNavigationBarItem(
                 icon:
                     Icon(Icons.favorite, color: Color.fromARGB(255, 193, 4, 4)),
                 label: "likes",
               ),
               BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.person,
-                  color: Color.fromARGB(255, 230, 229, 242),
+                icon: GestureDetector(
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LoginPage(),
+                    ),
+                  ),
+                  child: const Icon(
+                    Icons.person,
+                    color: Color.fromARGB(255, 230, 229, 242),
+                  ),
                 ),
                 label: "profile",
               ),
