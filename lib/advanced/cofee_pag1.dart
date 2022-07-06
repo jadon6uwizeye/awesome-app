@@ -1,3 +1,4 @@
+import 'package:awesome/advanced/cofee_tiles.dart';
 import 'package:flutter/material.dart';
 
 class CoffePage1 extends StatefulWidget {
@@ -76,6 +77,7 @@ class _CoffePage1State extends State<CoffePage1> {
                   height: 20,
                 ),
                 TextField(
+                  cursorColor: const Color.fromARGB(255, 134, 133, 133),
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
@@ -98,6 +100,37 @@ class _CoffePage1State extends State<CoffePage1> {
                         color: Color.fromARGB(255, 49, 48, 48), fontSize: 20),
                   ),
                 ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  color: Colors.transparent,
+                  height: 50,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Text(
+                        "Coffee",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Text(
+                        "View all",
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Color.fromARGB(255, 241, 198, 132),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                    child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: const [CofeeTiles(), CofeeTiles()])),
               ],
             ),
           )), // next: const Page2(),
