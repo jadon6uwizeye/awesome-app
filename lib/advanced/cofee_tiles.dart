@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
 
 class CofeeTiles extends StatelessWidget {
-  const CofeeTiles({Key? key}) : super(key: key);
+  final String image;
+  final String name;
+  final String description;
+  final double price;
+  const CofeeTiles(
+      {Key? key,
+      required this.image,
+      required this.name,
+      required this.description,
+      required this.price})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -9,8 +19,8 @@ class CofeeTiles extends StatelessWidget {
       padding: const EdgeInsets.all(7),
       child: Container(
           padding: const EdgeInsets.all(10),
-          width: 200,
-          height: 120,
+          width: 220,
+          height: 220,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: const Color.fromARGB(137, 56, 56, 56),
@@ -20,33 +30,37 @@ class CofeeTiles extends StatelessWidget {
             ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: Image.asset(
-                  'lib/images/cofee.jpg',
-                  // height: 500,
+                  image,
+                  height: 280,
+                  width: 200,
                 )),
-            const Text(
-              'Cappuccino',
-              style: TextStyle(
+            const SizedBox(height: 10),
+            Text(
+              name,
+              style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const Text("With oat milk",
-                style: TextStyle(
+            const SizedBox(height: 5),
+            Text(description,
+                style: const TextStyle(
                   fontSize: 12,
                   color: Colors.grey,
                   fontStyle: FontStyle.italic,
                 )),
+            const SizedBox(height: 15),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
-                  children: const [
-                    Text(
+                  children: [
+                    const Text(
                       "\$",
                       style: TextStyle(color: Colors.orange),
                     ),
-                    Text("1.99",
-                        style: TextStyle(
+                    Text(price.toString(),
+                        style: const TextStyle(
                           fontSize: 15,
                         )),
                   ],

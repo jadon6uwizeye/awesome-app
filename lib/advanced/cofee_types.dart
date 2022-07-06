@@ -15,7 +15,9 @@ class CofeeType extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap(),
+      onTap: () {
+        onTap();
+      },
       child: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Text(name,

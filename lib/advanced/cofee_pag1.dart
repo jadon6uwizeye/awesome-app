@@ -19,7 +19,15 @@ class _CoffePage1State extends State<CoffePage1> {
   ];
 
   void cofeeTypeSelected(index) {
-    print(index);
+    // WidgetsBinding.instance!.addPostFrameCallback((_) {
+    setState(() {
+      for (var element in cofeeTypes) {
+        element[1] = false;
+      }
+      cofeeTypes[index][1] = true;
+    });
+    // })
+    ;
   }
 
   @override
@@ -120,6 +128,7 @@ class _CoffePage1State extends State<CoffePage1> {
                   color: Colors.transparent,
                   height: 50,
                   child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
                       itemCount: cofeeTypes.length,
                       itemBuilder: (context, index) {
                         return CofeeType(
@@ -134,7 +143,26 @@ class _CoffePage1State extends State<CoffePage1> {
                 Expanded(
                     child: ListView(
                         scrollDirection: Axis.horizontal,
-                        children: const [CofeeTiles(), CofeeTiles()])),
+                        children: const [
+                      CofeeTiles(
+                        image: 'lib/images/cofee.jpg',
+                        name: 'Cappuccino',
+                        price: 4.49,
+                        description: 'with oat milk',
+                      ),
+                      CofeeTiles(
+                        image: 'lib/images/cofee2.jpg',
+                        name: 'Cappuccino',
+                        price: 4.49,
+                        description: 'with oat milk',
+                      ),
+                      CofeeTiles(
+                        image: 'lib/images/cofee3.jpg',
+                        name: 'Cappuccino',
+                        price: 4.49,
+                        description: 'with oat milk',
+                      )
+                    ])),
               ],
             ),
           )), // next: const Page2(),
