@@ -1,6 +1,8 @@
 import 'package:awesome/advanced/cofee_tiles.dart';
 import 'package:flutter/material.dart';
 
+import 'cofee_types.dart';
+
 class CoffePage1 extends StatefulWidget {
   const CoffePage1({Key? key}) : super(key: key);
 
@@ -9,6 +11,17 @@ class CoffePage1 extends StatefulWidget {
 }
 
 class _CoffePage1State extends State<CoffePage1> {
+  final List cofeeTypes = [
+    ['cappuccino', true],
+    ['Late', false],
+    ['Espresso', false],
+    ['tea', false]
+  ];
+
+  void cofeeTypeSelected(index) {
+    print(index);
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -106,26 +119,17 @@ class _CoffePage1State extends State<CoffePage1> {
                 Container(
                   color: Colors.transparent,
                   height: 50,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
-                      Text(
-                        "Coffee",
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                      Text(
-                        "View all",
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: Color.fromARGB(255, 241, 198, 132),
-                        ),
-                      ),
-                    ],
-                  ),
+                  child: ListView.builder(
+                      itemCount: cofeeTypes.length,
+                      itemBuilder: (context, index) {
+                        return CofeeType(
+                          name: cofeeTypes[index][0],
+                          isSelected: cofeeTypes[index][1],
+                          onTap: () {
+                            cofeeTypeSelected(index);
+                          },
+                        );
+                      }),
                 ),
                 Expanded(
                     child: ListView(
