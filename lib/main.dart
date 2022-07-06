@@ -1,3 +1,4 @@
+import 'package:awesome/advanced/cofee_pag1.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -14,6 +15,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Awesome App',
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
@@ -137,10 +139,14 @@ class Page3 extends StatelessWidget {
           title: const Text('Page 3'),
         ),
         floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.blue,
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const CoffePage1()),
+            );
           },
-          child: const Icon(Icons.navigate_before),
+          child: const Icon(Icons.navigate_next_rounded),
         ),
         body: ListView(
             // ignore: prefer_const_literals_to_create_immutables
