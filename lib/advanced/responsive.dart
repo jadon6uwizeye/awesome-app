@@ -1,4 +1,7 @@
+import 'package:awesome/advanced/responsive/responsice_layout.dart';
 import 'package:flutter/material.dart';
+import 'package:awesome/advanced/responsive/mobile_body.dart';
+import 'package:awesome/advanced/responsive/desktop_body.dart';
 
 class Responsive extends StatefulWidget {
   const Responsive({Key? key}) : super(key: key);
@@ -10,13 +13,10 @@ class Responsive extends StatefulWidget {
 class _ResponsiveState extends State<Responsive> {
   @override
   Widget build(BuildContext context) {
-    final mediaQuery = MediaQuery.of(context);
-    return Scaffold(
-      backgroundColor: mediaQuery.size.width > 600
-          ? Color.fromARGB(255, 120, 153, 169)
-          : Color.fromARGB(255, 242, 199, 199),
-      body: Center(
-        child: Text(mediaQuery.size.toString()),
+    return const Scaffold(
+      body: ResponsiveLayout(
+        largeScreen: DeskTopBody(),
+        smallScreen: MobileBody(),
       ),
     );
   }
