@@ -1,3 +1,4 @@
+import 'package:awesome/advanced/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -76,21 +77,31 @@ class _LoginPageState extends State<LoginPage> {
                     )),
               ),
               const SizedBox(height: 10),
-              Container(
-                height: 40,
-                width: 260,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: const Color.fromARGB(255, 255, 255, 255),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Responsive(),
+                    ),
+                  );
+                },
+                child: Container(
+                  height: 40,
+                  width: 260,
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: const Color.fromARGB(255, 255, 255, 255),
+                    ),
+                    borderRadius: BorderRadius.circular(20),
+                    color: const Color.fromARGB(255, 28, 6, 118),
                   ),
-                  borderRadius: BorderRadius.circular(20),
-                  color: const Color.fromARGB(255, 28, 6, 118),
-                ),
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: const Center(
-                  child: Text(
-                    "Sign in",
-                    style: TextStyle(color: Colors.white),
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: const Center(
+                    child: Text(
+                      "Sign in",
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ),
                 ),
               ),

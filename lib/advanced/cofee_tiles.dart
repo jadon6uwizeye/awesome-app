@@ -18,7 +18,7 @@ class CofeeTiles extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(7),
       child: Container(
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.only(top: 10, bottom: 2),
           width: 220,
           height: 220,
           decoration: BoxDecoration(
@@ -49,7 +49,7 @@ class CofeeTiles extends StatelessWidget {
                   color: Colors.grey,
                   fontStyle: FontStyle.italic,
                 )),
-            const SizedBox(height: 15),
+            const SizedBox(height: 5),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
