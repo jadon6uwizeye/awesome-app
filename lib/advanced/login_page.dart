@@ -28,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
                 style: GoogleFonts.bebasNeue(
                   fontSize: 36,
                   fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 17, 18, 23),
+                  color: const Color.fromARGB(255, 17, 18, 23),
                 ),
               ),
               const SizedBox(height: 5),
@@ -84,7 +84,7 @@ class _LoginPageState extends State<LoginPage> {
                     color: const Color.fromARGB(255, 255, 255, 255),
                   ),
                   borderRadius: BorderRadius.circular(20),
-                  color: Color.fromARGB(255, 28, 6, 118),
+                  color: const Color.fromARGB(255, 28, 6, 118),
                 ),
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: const Center(
