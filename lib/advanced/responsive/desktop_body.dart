@@ -10,6 +10,10 @@ class DeskTopBody extends StatelessWidget {
         appBar: AppBar(
           title: const Text("Mobile"),
         ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: const Icon(Icons.map),
+        ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(

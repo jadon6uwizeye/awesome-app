@@ -2,6 +2,8 @@ import 'package:awesome/advanced/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'map/map.dart';
+
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -14,6 +16,16 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 241, 242, 244),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const MapScreen(),
+              ));
+        },
+        child: const Icon(Icons.map),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(30.0),
         child: Center(
