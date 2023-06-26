@@ -18,11 +18,11 @@ class _LoginPageState extends State<LoginPage> {
       backgroundColor: const Color.fromARGB(255, 241, 242, 244),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const MapScreen(),
-              ));
+          // Navigator.push(
+          //     context,
+          //     MaterialPageRoute(
+          //       builder: (context) => const MapScreen(),
+          //     ));
         },
         child: const Icon(Icons.map),
       ),
@@ -48,11 +48,12 @@ class _LoginPageState extends State<LoginPage> {
               const Text("Welcome back you've been missed"),
               const SizedBox(height: 35),
               Container(
+                width: 420,
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 decoration: BoxDecoration(
                   border: Border.all(
                     color: const Color.fromARGB(255, 255, 255, 255),
-                    width: 1,
+                    width: 2,
                   ),
                   borderRadius: BorderRadius.circular(20),
                   color: Colors.white,
@@ -70,11 +71,12 @@ class _LoginPageState extends State<LoginPage> {
               ),
               const SizedBox(height: 10),
               Container(
+                width: 420,
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 decoration: BoxDecoration(
                   border: Border.all(
                     color: const Color.fromARGB(255, 255, 255, 255),
-                    width: 1,
+                    width: 2,
                   ),
                   borderRadius: BorderRadius.circular(20),
                   color: Colors.white,

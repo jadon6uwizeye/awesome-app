@@ -43,7 +43,6 @@ class _CoffePage1State extends State<CoffePage1> {
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             elevation: 0,
-            leading: const Icon(Icons.menu),
             actions: [
               Padding(
                 padding: const EdgeInsets.only(right: 16),
@@ -58,6 +57,52 @@ class _CoffePage1State extends State<CoffePage1> {
               ),
             ],
           ),
+          drawer: Container(
+              width: 250,
+              color: Color.fromARGB(255, 253, 255, 255),
+              // child as a list of scrollable items
+              child: Column(
+                children: [
+                  const ListTile(
+                    leading: Icon(Icons.person),
+                    title: Text(
+                      'User',
+                    ),
+                  ),
+                  const Divider(
+                    color: Colors.white,
+                    thickness: 2,
+                  ),
+                  const ListTile(
+                    leading: Icon(Icons.home),
+                    title: Text('Home'),
+                  ),
+                  const Divider(
+                    color: Colors.white,
+                    thickness: 2,
+                  ),
+                  const ListTile(
+                    leading: Icon(Icons.settings),
+                    title: Text('Settings'),
+                  ),
+                  const Divider(
+                    color: Colors.white,
+                    thickness: 2,
+                  ),
+                  const ListTile(
+                    leading: Icon(Icons.info),
+                    title: Text('About'),
+                  ),
+                  const Divider(
+                    color: Colors.white,
+                    thickness: 2,
+                  ),
+                  const ListTile(
+                    leading: Icon(Icons.logout),
+                    title: Text('Logout'),
+                  ),
+                ],
+              )),
           bottomNavigationBar: BottomNavigationBar(
             backgroundColor: Colors.transparent,
             elevation: 0,
@@ -152,15 +197,16 @@ class _CoffePage1State extends State<CoffePage1> {
                 Expanded(
                     child: ListView(
                         scrollDirection: Axis.horizontal,
+                        // change height of children to 200
                         children: const [
                       CofeeTiles(
-                        image: 'lib/images/cofee.jpg',
+                        image: 'lib/images/coffee.jpg',
                         name: 'Cappuccino',
                         price: 4.49,
                         description: 'with oat milk',
                       ),
                       CofeeTiles(
-                        image: 'lib/images/cofee2.jpg',
+                        image: 'lib/images/coffee1.jpg',
                         name: 'Cappuccino',
                         price: 4.49,
                         description: 'with oat milk',
@@ -172,6 +218,9 @@ class _CoffePage1State extends State<CoffePage1> {
                         description: 'with oat milk',
                       )
                     ])),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.18,
+                ),
               ],
             ),
           )), // next: const Page2(),

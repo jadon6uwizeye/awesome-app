@@ -18,31 +18,78 @@ class DeskTopBody extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Row(
             children: [
+              Container(
+                  width: MediaQuery.of(context).size.width / 2.5,
+                  color: Color.fromARGB(255, 161, 177, 190),
+                  // child as a list of scrollable items
+                  child: Column(
+                    children: [
+                      const ListTile(
+                        leading: Icon(Icons.person),
+                        title: Text(
+                          'User',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      const Divider(
+                        color: Colors.white,
+                        thickness: 2,
+                      ),
+                      const ListTile(
+                        leading: Icon(Icons.home),
+                        title: Text('Home'),
+                      ),
+                      const Divider(
+                        color: Colors.white,
+                        thickness: 2,
+                      ),
+                      const ListTile(
+                        leading: Icon(Icons.settings),
+                        title: Text('Settings'),
+                      ),
+                      const Divider(
+                        color: Colors.white,
+                        thickness: 2,
+                      ),
+                      const ListTile(
+                        leading: Icon(Icons.info),
+                        title: Text('About'),
+                      ),
+                      const Divider(
+                        color: Colors.white,
+                        thickness: 2,
+                      ),
+                      const ListTile(
+                        leading: Icon(Icons.logout),
+                        title: Text('Logout'),
+                      ),
+                    ],
+                  )),
               Expanded(
                 child: Column(children: [
                   AspectRatio(
-                    aspectRatio: 16 / 9,
+                    aspectRatio: 16 / 6,
                     child: Container(
-                      color: const Color.fromARGB(255, 2, 65, 52),
+                      color: Color.fromARGB(255, 141, 156, 153),
                     ),
                   ),
                   Expanded(
                       child: ListView.builder(
-                          itemCount: 8,
+                          itemCount: 15,
                           itemBuilder: (context, index) {
-                            return const Padding(
-                              padding: EdgeInsets.all(8.0),
+                            return Padding(
+                              padding: EdgeInsets.all(2.0),
                               child: ListTile(
-                                tileColor: Color.fromARGB(255, 4, 68, 81),
+                                title: Text(
+                                  "Item  ${index + 1}",
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                tileColor: Color.fromARGB(255, 77, 78, 79),
                               ),
                             );
                           }))
                 ]),
               ),
-              Container(
-                width: 200,
-                color: const Color.fromARGB(255, 4, 68, 81),
-              )
             ],
           ),
         ));

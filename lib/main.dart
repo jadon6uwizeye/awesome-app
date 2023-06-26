@@ -1,6 +1,8 @@
 import 'package:awesome/advanced/cofee_pag1.dart';
 import 'package:flutter/material.dart';
 
+import 'advanced/login_page.dart';
+
 void main() => runApp(const MyApp());
 
 class MyApp extends StatefulWidget {
@@ -120,12 +122,12 @@ class MyHomePage extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const Page2()),
+              MaterialPageRoute(builder: (context) => const LoginPage()),
             );
           },
           child: const Icon(Icons.navigate_next),
         ),
-        body: Center(child: Image.asset('assets/Roads-Untraveled.jpg')));
+        body: LoginPage());
   }
 }
 

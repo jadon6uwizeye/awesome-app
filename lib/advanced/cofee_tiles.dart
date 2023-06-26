@@ -18,66 +18,68 @@ class CofeeTiles extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(7),
       child: Container(
-          padding: const EdgeInsets.only(top: 10, bottom: 2),
-          width: 220,
-          height: 220,
+          padding: const EdgeInsets.all(7),
+          width: MediaQuery.of(context).size.width / 3,
+          height: 200,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: const Color.fromARGB(137, 56, 56, 56),
           ),
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Image.asset(
-                  image,
-                  height: 280,
-                  width: 200,
-                )),
-            const SizedBox(height: 10),
-            Text(
-              name,
-              style: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 5),
-            Text(description,
-                style: const TextStyle(
-                  fontSize: 12,
-                  color: Colors.grey,
-                  fontStyle: FontStyle.italic,
-                )),
-            const SizedBox(height: 5),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Image.asset(
+                      image,
+                      height: MediaQuery.of(context).size.height / 5,
+                      width: MediaQuery.of(context).size.width / 3,
+                    )),
+                const SizedBox(height: 10),
+                Text(
+                  name,
+                  style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 5),
+                Text(description,
+                    style: const TextStyle(
+                      fontSize: 12,
+                      color: Colors.grey,
+                      fontStyle: FontStyle.italic,
+                    )),
+                const SizedBox(height: 5),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    const Text(
-                      "\$",
-                      style: TextStyle(color: Colors.orange),
+                    Row(
+                      children: [
+                        const Text(
+                          "\$",
+                          style: TextStyle(color: Colors.orange),
+                        ),
+                        Text(price.toString(),
+                            style: const TextStyle(
+                              fontSize: 15,
+                            )),
+                      ],
                     ),
-                    Text(price.toString(),
-                        style: const TextStyle(
-                          fontSize: 15,
-                        )),
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.orange,
+                      ),
+                      child: const Icon(
+                        // Icons.add_shopping_cart,
+                        Icons.add,
+                      ),
+                    ),
                   ],
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.orange,
-                  ),
-                  child: const Icon(
-                    // Icons.add_shopping_cart,
-                    Icons.add,
-                  ),
-                ),
-              ],
-            )
-          ])),
+                )
+              ])),
     );
   }
 }

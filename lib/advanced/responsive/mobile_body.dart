@@ -10,9 +10,58 @@ class MobileBody extends StatelessWidget {
         appBar: AppBar(
           title: const Text("Mobile"),
         ),
+        drawer: Container(
+            width: 250,
+            color: Color.fromARGB(255, 85, 95, 97),
+            // child as a list of scrollable items
+            child: Column(
+              children: [
+                const ListTile(
+                  leading: Icon(Icons.person),
+                  title: Text(
+                    'User',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+                const Divider(
+                  color: Colors.white,
+                  thickness: 2,
+                ),
+                const ListTile(
+                  leading: Icon(Icons.home),
+                  title: Text('Home'),
+                ),
+                const Divider(
+                  color: Colors.white,
+                  thickness: 2,
+                ),
+                const ListTile(
+                  leading: Icon(Icons.settings),
+                  title: Text('Settings'),
+                ),
+                const Divider(
+                  color: Colors.white,
+                  thickness: 2,
+                ),
+                const ListTile(
+                  leading: Icon(Icons.info),
+                  title: Text('About'),
+                ),
+                const Divider(
+                  color: Colors.white,
+                  thickness: 2,
+                ),
+                const ListTile(
+                  leading: Icon(Icons.logout),
+                  title: Text('Logout'),
+                ),
+              ],
+            )),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(children: [
+            // add drawer menu
+
             AspectRatio(
               aspectRatio: 16 / 9,
               child: Container(

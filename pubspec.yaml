@@ -33,6 +33,7 @@ dependencies:
   dio: ^4.0.0
   flutter_polyline_points: ^0.2.6
   google_maps_flutter: ^2.0.2
+  file: ^6.1.4
 
 
 
@@ -67,8 +68,8 @@ flutter:
   assets:
     - assets/Roads-Untraveled.jpg
     - assets/cartoon.png
-    - lib/images/cofee.jpg
-    - lib/images/cofee2.jpg
+    - lib/images/coffee.jpg
+    - lib/images/coffee1.jpg
     - lib/images/cofee3.jpg
   #   - images/a_dot_ham.jpeg
 
