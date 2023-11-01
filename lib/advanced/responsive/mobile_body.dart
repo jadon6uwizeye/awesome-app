@@ -6,15 +6,15 @@ class MobileBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.white,
         appBar: AppBar(
           title: const Text("Mobile"),
         ),
         drawer: Container(
             width: 250,
-            color: Color.fromARGB(255, 85, 95, 97),
-            // child as a list of scrollable items
-            child: Column(
+
+            // child as a list of scrollable itemsColor.fromARGB(255, 85, 95, 97)
+            child: const Column(
               children: [
                 const ListTile(
                   leading: Icon(Icons.person),
@@ -61,7 +61,6 @@ class MobileBody extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Column(children: [
             // add drawer menu
-
             AspectRatio(
               aspectRatio: 16 / 9,
               child: Container(

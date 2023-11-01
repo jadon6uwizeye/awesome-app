@@ -112,7 +112,7 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: const Text(
-            'My awesome app',
+            'Awesome app(PWA)',
             style: TextStyle(
                 fontWeight: FontWeight.bold,
                 color: Color.fromARGB(255, 17, 18, 23)),
