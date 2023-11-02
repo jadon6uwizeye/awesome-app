@@ -10,9 +10,11 @@ class MobileBody extends StatelessWidget {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          title: const Text("Mobile"),
+          title: const Text("Awesome Mobile"),
         ),
-        drawer: DrawerWidget(),
+        drawer: Container(
+            width: MediaQuery.of(context).size.width / 2,
+            child: DrawerWidget()),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(children: [

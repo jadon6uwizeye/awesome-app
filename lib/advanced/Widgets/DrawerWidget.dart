@@ -7,10 +7,10 @@ class DrawerWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         margin: const EdgeInsets.only(top: 12, bottom: 20),
-        width: 250,
         height: MediaQuery.of(context).size.height,
+        width: 200,
         decoration: BoxDecoration(
-            color: Color.fromARGB(255, 168, 168, 168),
+            color: Color.fromARGB(255, 175, 176, 177),
             borderRadius: const BorderRadius.only(
                 topRight: Radius.circular(20),
                 bottomRight: Radius.circular(20))),
@@ -35,36 +35,40 @@ class DrawerWidget extends StatelessWidget {
               ),
             ),
             const Divider(
-              color: Colors.white,
-              thickness: 2,
+              color: Color.fromARGB(255, 197, 196, 196),
+              thickness: 1,
             ),
             const ListTile(
               leading: Icon(Icons.home),
               title: Text('Use'),
             ),
             const Divider(
-              color: Colors.white,
-              thickness: 2,
+              color: Color.fromARGB(255, 197, 196, 196),
+              thickness: 1,
             ),
             const ListTile(
               leading: Icon(Icons.settings),
               title: Text('Settings'),
             ),
             const Divider(
-              color: Colors.white,
-              thickness: 2,
+              color: Color.fromARGB(255, 197, 196, 196),
+              thickness: 1,
             ),
             const ListTile(
               leading: Icon(Icons.info),
               title: Text('About'),
             ),
             const Divider(
-              color: Colors.white,
-              thickness: 2,
+              color: Color.fromARGB(255, 197, 196, 196),
+              thickness: 1,
             ),
             const ListTile(
               leading: Icon(Icons.logout),
               title: Text('Logout'),
+            ),
+            const Divider(
+              color: Color.fromARGB(255, 197, 196, 196),
+              thickness: 1,
             ),
           ],
         ));

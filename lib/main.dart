@@ -22,7 +22,8 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
       ),
-      home: const MyHomePage(title: 'Awesome app'), // next: const Page2(),
+      home: const MyHomePage(title: 'Awesome app'),
+      // const Page2(),
     );
   }
 }
@@ -36,7 +37,7 @@ class Page2 extends StatelessWidget {
       padding: const EdgeInsets.all(8),
       height: double.infinity,
       width: double.infinity,
-      color: Colors.blueGrey,
+      color: Colors.transparent,
       child: Card(
         // ignore: avoid_unnecessary_containers
         child: ListView(

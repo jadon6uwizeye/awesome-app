@@ -9,9 +9,9 @@ class DeskTopBody extends StatelessWidget {
   Widget build(BuildContext context) {
     const items = [];
     return Scaffold(
-        backgroundColor: Color.fromARGB(255, 159, 167, 173),
+        backgroundColor: Colors.white,
         appBar: AppBar(
-          title: const Text("Mobile"),
+          title: const Text("Desktop PWA"),
         ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -39,6 +39,7 @@ class DeskTopBody extends StatelessWidget {
                   Expanded(child: ListWidget())
                 ]),
               ),
+              Expanded(child: ListWidget())
             ],
           ),
         ));

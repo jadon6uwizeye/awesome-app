@@ -34,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               const Icon(Icons.android, size: 100, color: Colors.blueGrey),
               const SizedBox(
-                height: 80,
+                height: 40,
               ),
               Text(
                 "HELLO AGAIN",
@@ -45,8 +45,14 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               const SizedBox(height: 5),
-              const Text("Welcome back you've been missed"),
-              const SizedBox(height: 35),
+              const Text(
+                "Welcome back you've been missed",
+                style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400,
+                    fontFamily: 'Sans Serif'),
+              ),
+              const SizedBox(height: 40),
               Container(
                 width: 420,
                 padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -69,7 +75,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
               Container(
                 width: 420,
                 padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -90,7 +96,7 @@ class _LoginPageState extends State<LoginPage> {
                           TextStyle(fontSize: 12, fontFamily: 'Sans Serif'),
                     )),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 40),
               GestureDetector(
                 onTap: () {
                   Navigator.push(
@@ -119,7 +125,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
-              const SizedBox(height: 15),
+              const SizedBox(height: 20),
               const Text(
                 "Don't have an account?",
                 style: TextStyle(
